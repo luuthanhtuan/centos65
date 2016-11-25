@@ -2,7 +2,7 @@ Setup local development environment.  Installs Apache, PHP, MySQL, Ruby and Node
 
 ```
 mkdir mycentos && cd mycentos
-vagrant init chef/centos-6.5
+vagrant init bento/centos-6.7
 vi Vagrantfile # IP編集
 vagrant up
 vagrant ssh
@@ -13,13 +13,17 @@ cd centos65
 exec $SHELL -l
 ```
 
-If you need to update the script, please follow the instruction below.
+If you need to update the environment, please follow instructions below.
 
 ```
 cd
-git clone https://github.com/dotinstallres/centos65.git
+cd mycentos # Vagrantfileがあるフォルダに移動
+vagrant up
+vagrant ssh
 cd centos65
+git pull --rebase
 ./run.sh
+exec $SHELL -l
 ```
 
 
